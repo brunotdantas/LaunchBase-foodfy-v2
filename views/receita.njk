@@ -1,0 +1,33 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+   <main>
+      <!-- INICIO SOBRE NOS -->
+      <div class='sobre-nos'>
+        <div class='container'>
+            <img src="{{receita.image}}" alt="{{receita.title}}" class="receita-banner" />
+
+            <p class="receita-titulo">{{receita.title}}</p>
+            <p class="receita-autor">por {{receita.author}}</p>
+
+            <p class="receita-subtitulo">Ingredientes <span id="hide-Ingredientes" class="receita-esconder" >ESCONDER<span></p> 
+            <p  class="receita-texto">
+                <ul id="receita-ingred">
+                    {% for ingrediente in receita.ingredients %}
+                            <li class="receita-ingrediente"> {{ingrediente}} </li>
+                    {% endfor %}
+                </ul>
+            </p>
+
+            <p class="receita-subtitulo">Modo de preparo <span id="hide-preparo" class="receita-esconder">ESCONDER<span></p> 
+            <p id="receita-prep" class="receita-texto">{{receita.preparation}}</p>
+
+            <p class="receita-subtitulo">Informações adicionais <span id="hide-addInfo" class="receita-esconder">ESCONDER<span></p> 
+            <p id="receita-info" class="receita-texto">{{receita.information}}</p>
+
+        </div><!-- /container -->
+      </div><!-- /sobre-nos -->
+      <!-- FIM SOBRE NOS -->
+    </main>
+
+{% endblock %}

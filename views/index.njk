@@ -1,0 +1,55 @@
+{% extends "layout.njk" %}
+
+{% block content%}
+
+    <main>
+      <div class='container'>
+        <!-- INICIO MELHORES RECEITAS -->
+        <section>
+          <div class='melhores-receitas'>
+            <div class="melhores-receitas__texto">
+              <span>
+                <h2>As Melhores Receitas</h2>
+                <p class="tagline">
+                  Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.
+                </p>
+              </span>
+            </div><!-- /melhores-receitas__texto -->
+
+            <div class="melhores-receitas__chefe">
+              <img class="img-fluid" src="/chefe.png" alt="Chefe">
+            </div>
+          </div><!-- /melhores-receitas -->
+        </section>
+        <!-- FIM MELHORES RECEITAS -->
+
+        <!-- INICIO MAIS ACESSADAS -->
+        <section>
+          <div class='mais-acessadas'>
+            <h2>As 6 Receitas mais acessadas</h2>
+
+            <div class='row'>
+
+            <!-- INICIO lista de cards -->
+              {% for receita in receitasPorAcesso %}
+                <div class="mais-acessadas__card" id="{{receita.id}}">
+                  <div class="thumbnail">
+                    <img src="{{receita.image}}" alt="{{receita.title}}" />
+                  </div><!-- /thumbnail -->
+
+                  <p class="nome">{{receita.title}} </p>
+                  <p class="autor">por {{receita.author}}</p>
+                  <p class="numAcessos">{{receita.numAcessos}} Acesso{% if receita.numAcessos != 1 %}s {% endif %}</p>
+                </div><!-- /mais-acessadas__card  -->
+              {% endfor %}
+            <!-- /INICIO lista de cards -->
+   
+            </div><!-- /row -->
+          </div><!-- /mais-acessadas -->
+        </section>
+        <!-- FIM MAIS ACESSADAS -->
+      </div><!-- /container -->
+
+    </main>
+
+{% endblock %}

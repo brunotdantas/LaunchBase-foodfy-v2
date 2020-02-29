@@ -1,0 +1,34 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+
+    <main>
+      <div class='container'>
+        <!-- INICIO MAIS ACESSADAS -->
+        <section>
+          <div class='mais-acessadas'>
+            <div class='row'>
+
+            <!-- INICIO lista de cards -->
+              {% for receita in ListaReceitas %}
+                <div class="mais-acessadas__card" id="{{receita.id}}">
+                  <div class="thumbnail">
+                    <img src="{{receita.image}}" alt="{{receita.title}}" />
+                  </div><!-- /thumbnail -->
+
+                  <p class="nome">{{receita.title}} </p>
+                  <p class="autor">por {{receita.author}}</p>
+                </div><!-- /mais-acessadas__card  -->
+              {% endfor %}
+            <!-- /INICIO lista de cards -->
+
+            </div><!-- /row -->
+          </div><!-- /mais-acessadas -->
+        </section>
+        <!-- FIM MAIS ACESSADAS -->
+      </div><!-- /container -->
+
+   
+  
+{% endblock %}

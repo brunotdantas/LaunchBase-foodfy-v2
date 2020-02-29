@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FoodFy</title>
+
+  <!-- RESET CSS -->
+  <link rel="stylesheet" href="/reset.css">
+
+  <!-- PADRAO -->
+  <link rel="stylesheet" href="/padrao.css">
+
+  <!-- FONTE -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div class="content">
+
+    <!-- INICIO HEADER -->
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="logo">
+            <a href="/">
+              <img class="img-fluid" src="/logo.png" alt="FoodFy">
+            </a>
+          </div><!-- /logo -->
+
+          <div class="menu">
+            <a href="/sobre">Sobre</a>
+            <a href="/receitas">Receitas</a>
+          </div><!-- /menu -->
+        </div><!-- /row -->
+      </div><!-- /container -->
+    </header>
+    <!-- FIM HEADER -->
+
+    <!-- INICIO MAIN -->
+
+    {% block content %}{% endblock %}
+
+    <!-- FIM MAIN -->
+  </div><!-- Fim content -->
+
+  <!-- INICIO FOOTER -->
+  <footer>
+    <p>Todos direitos reservados, receitas Foodfy. Criado por <b><a class="githubLink" target="_blank"
+          href="https://github.com/brunotdantas/LaunchBase-foodfy">Bruno Dantas</a></b> </p>
+  </footer>
+  <!-- FIM FOOTER -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
