@@ -55,21 +55,6 @@ server.get("/receita", function(req,res){
         return res.send("Receita não encontrada");
     }
 
-    // Se encontrou a receita soma um acesso:
-
-
-    jsonReader('./data.json', (err, customer) => {
-        if (err) {
-            console.log('Error reading file:',err)
-            return
-        }// increase customer order count by 1
-        receitaEncontrada.numAcessos += 1
-        
-        fs.writeFile('./data.json', JSON.stringify(customer), (err) => {
-            if (err) console.log('Error writing file:', err)
-        })
-    })
-
     return res.render("receita", { receita: receitaEncontrada })
         
 })
