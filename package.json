@@ -4,7 +4,7 @@
   "description": "Mesmo projeto foodfy porém com conteúdo dinâmico usando backend para gerar os dados e renderizar com nunjucks",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "nunjucks": "^3.2.0"
   },
   "devDependencies": {
